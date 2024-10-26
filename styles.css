@@ -1,197 +1,237 @@
-/* General Styles */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
 }
 
+/* Body and Container Styling */
 body {
-    font-family: 'Roboto', sans-serif;
+    background-color: #f3f3f3;
     color: #333;
-    background-color: #f7f9fb;
     line-height: 1.6;
 }
 
-header {
-    background-color: #003366;
-    padding: 20px 0;
-    color: #fff;
-}
-
-.navbar {
+.container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 0;
+    background-color: #026aa7;
+    color: #fff;
 }
 
-.logo {
-    font-size: 24px;
+.navbar .logo {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-nav ul {
-    list-style: none;
+.navbar nav ul {
     display: flex;
+    list-style: none;
 }
 
-nav ul li {
+.navbar nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a {
-    text-decoration: none;
+.navbar nav ul li a {
     color: #fff;
+    text-decoration: none;
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 5px;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #00509e;
+.navbar nav ul li a:hover {
+    color: #ffd700;
 }
 
-/* About Section */
+/* About Clinic Section */
 .about-section {
-    padding: 60px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 3rem 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
 }
 
-.about-image {
-    flex: 1;
-    margin-right: 40px;
-}
-
-.doctor-pic {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: transform 0.6s ease-in-out;
-}
-
-.animate-image:hover {
-    transform: rotate(360deg);
-}
-
-.about-text {
-    flex: 2;
-    max-width: 600px;
-}
-
-.about-text h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #003366;
-}
-
-.about-text p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.animate-text {
-    animation: slideIn 1.2s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Services Section with Card-like Design */
-.services-section {
-    padding: 60px 20px;
+.about-section h2 {
+    color: #026aa7;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
     text-align: center;
-    background-color: #fff;
 }
 
-.services-list {
+.about-section p {
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p.highlight {
+    background-color: #e9f5fc;
+    padding: 1rem;
+    border-left: 4px solid #026aa7;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+/* About Doctor Section */
+.doctor-section {
+    background-color: #f3f3f3;
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease;
+}
+
+.doctor-section h2 {
+    color: #026aa7;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.doctor-section p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.doctor-section p.strong {
+    font-weight: 500;
+    color: #333;
+}
+
+.doctor-section .details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.doctor-section .details div {
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Services Section with Card-like Animation */
+.services-section {
+    background-color: #ffffff;
+    padding: 3rem 1.5rem;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease;
+}
+
+.services-section h2 {
+    color: #026aa7;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .service-card {
-    background-color: #f1f5f9;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .service-card h3 {
-    font-size: 22px;
-    color: #003366;
-    margin-bottom: 10px;
+    color: #026aa7;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .service-card p {
-    font-size: 16px;
-    color: #666;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* Contact Section */
 .contact-section {
-    padding: 60px 20px;
+    background-color: #ffffff;
+    padding: 2rem 0;
     text-align: center;
 }
 
-.contact-section p {
-    font-size: 16px;
-    color: #666;
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-/* Call-to-action Button */
-.btn {
+.contact-section p {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.contact-section .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 16px;
+    background-color: #026aa7;
     color: #fff;
-    background-color: #0073e6;
-    border: none;
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
+.contact-section .btn:hover {
+    background-color: #ffd700;
+}
+
+/* Footer */
 footer {
-    background-color: #003366;
-    padding: 20px 0;
+    background-color: #333;
     color: #fff;
+    padding: 1rem 0;
     text-align: center;
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* Animation Effects */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-    }
-
-    .about-image {
-        margin: 0 0 20px 0;
-    }
-
-    .services-list {
+    .doctor-section .details {
         grid-template-columns: 1fr;
     }
 }
